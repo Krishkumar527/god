@@ -1,0 +1,14 @@
+/* God of War Ragnarök UI Styles */
+body {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+}
+
+/* Glow effects for selected items */
+.selected-glow {
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease-in-out;
+}
