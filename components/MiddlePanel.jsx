@@ -13,38 +13,22 @@ const MiddlePanel = () => {
     }
   };
 
-  const getRankGradient = (rank) => {
-    switch (rank) {
-      case 1:
-        return 'from-amber-500 via-orange-600 to-red-700 border-amber-400';
-      case 2:
-        return 'from-gray-400 via-gray-500 to-gray-700 border-gray-300';
-      case 3:
-        return 'from-blue-600 via-indigo-700 to-purple-800 border-blue-500';
-      case 4:
-        return 'from-emerald-600 via-green-700 to-teal-800 border-green-500';
-      case 5:
-        return 'from-sky-500 via-blue-600 to-blue-800 border-sky-400';
-      default:
-        return 'from-gray-700 to-gray-900 border-gray-600';
-    }
-  };
-
   return (
     <div className="flex-1 p-8 flex flex-col overflow-y-auto relative">
-      <div className="absolute inset-0 bg-black/30 z-0"></div>
+      {/* Transparent background layer */}
+      <div className="absolute inset-0 bg-transparent z-0"></div>
 
       <div className="relative z-10 flex flex-col">
         <div className="mb-6">
           <h2 className="text-3xl font-bold text-white mb-2">TOP 5 TEAMS</h2>
-          <p className="text-lg text-white-400">Leaderboard Summary</p>
+          <p className="text-lg text-gray-300">Leaderboard Summary</p>
         </div>
 
         <div className="space-y-5">
           {topFive.map((player) => (
             <div
               key={player.rank}
-              className={`bg-gradient-to-r ${getRankGradient(player.rank)} rounded-xl p-6 border-2 shadow-xl backdrop-blur-sm hover:scale-[1.02] transition-transform`}
+              className="rounded-2xl p-6 border border-white/25 bg-white/10 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] hover:scale-[1.02] transition-transform duration-300"
             >
               <div className="flex items-center justify-between">
                 
@@ -53,14 +37,14 @@ const MiddlePanel = () => {
                   {/* Rank Emoji + Badge */}
                   <div className="flex items-center gap-3">
                     <div className="text-4xl">{getRankEmoji(player.rank)}</div>
-                    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 border border-white/3000 text-white font-bold text-lg shadow-md">
+                    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-white/20 border border-white/40 text-white font-bold text-lg shadow-md backdrop-blur-sm">
                       {player.rank}
                     </div>
                   </div>
 
                   {/* Team Name */}
                   <div>
-                    <div className="text-2xl font-extrabold text-white">
+                    <div className="text-2xl font-extrabold text-white drop-shadow-sm">
                       {player.name}
                     </div>
                   </div>
@@ -68,7 +52,7 @@ const MiddlePanel = () => {
 
                 {/* Score */}
                 <div className="text-right">
-                  <div className="text-3xl font-bold text-white mb-1">
+                  <div className="text-3xl font-bold text-white mb-1 drop-shadow-sm">
                     {player.score.toLocaleString()}
                   </div>
                   <div className="text-sm text-white/80">Score</div>

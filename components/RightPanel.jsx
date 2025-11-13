@@ -3,19 +3,19 @@ import React from 'react';
 const RightPanel = () => {
   return (
     <div 
-      className="w-96 relative overflow-hidden"
+      className="w-105 relative overflow-hidden rounded-lg pt-10"
     >
       {/* Background Overlay - Very transparent so overall background shows */}
-      <div className="absolute inset-0 bg-black/30 z-10"></div>
+      <div className="absolute inset-0 z-10"></div>
       
       {/* Character Display Area */}
       <div className="h-full flex items-center justify-center relative z-20">
         {/* Character Image */}
         <div className="relative flex items-center justify-center p-4">
           <img
-            src="/db28eb58db7828789bf3a1b2c6f0fafc-removebg-preview.png"
+            src="src/06f0b4b4fc75c46809f1020e314486cd-removebg-preview.png"
             alt="Character"
-            className="w-[600px] h-auto max-h-[100vh] object-contain rounded-lg shadow-2xl bg-gray-900/20 backdrop-blur-sm"
+            className="w-[600px] h-auto max-h-[100vh] object-contain rounded-2xl shadow-2xl bg-black/30 "
             style={{ 
               filter: 'brightness(1) contrast(1.1)',
               display: 'block'

@@ -4,7 +4,7 @@ const LeftPanel = () => {
   return (
     <div className="w-80 border-r border-blue-600/20 flex flex-col h-full relative">
       {/* Background Overlay */}
-      <div className="absolute inset-0 bg-black/30 z-0"></div>
+      <div className="absolute inset-0 bg-black/700 z-0"></div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col h-full">
